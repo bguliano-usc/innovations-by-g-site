@@ -1,0 +1,51 @@
+:root {
+    --main-buttons-color: #444;  /* sets the main color for buttons */
+}
+
+/* first section */
+.first-section {
+    height: 500px;                                                                  /* sets the height of the first section */
+    background: linear-gradient(90deg, rgba(0, 220, 0, 0.70) 0%, #00DC00 100%); /* applies a green gradient background per figma */
+    position: relative;                                                             /* sets the position relative for absolute positioning below */
+}
+
+.first-section h2 {
+    position: absolute;  /* positions the using the below constraints */
+    top: 30px;           /* places the heading 30px from the top */
+    left: 30px;          /* places the heading 30px from the left */
+    font-size: 48px;     /* sets a large font size for the heading */
+}
+
+.first-section .main-buttons-container {
+    position: absolute;  /* positions the using the below constraints */
+    bottom: 45px;        /* places the container 45px from the bottom */
+    right: 30px;         /* places the container 30px from the right */
+}
+
+.first-section a {
+    background-color: var(--main-buttons-color);  /* applies the main button color */
+    padding: 15px;                                /* adds padding inside the buttons */
+    border-radius: 10px;                          /* rounds the corners of the buttons */
+    text-decoration: none;                        /* removes the underline from links */
+    color: white;                               /* sets the button text color to white */
+    font-weight: bold;                            /* makes the button text bold */
+}
+
+.first-section a:first-child {
+    margin-right: 10px;  /* adds space to the right of the first button */
+}
+
+/* cards */
+.cards-container {
+    display: flex;  /* displays the cards in a flex container */
+}
+
+.card {
+    background-color: #ddd;                /* sets a light grey background for the cards */
+    margin: 10px;                            /* adds a margin around each card */
+    border-radius: 10px;                     /* rounds the corners of each card */
+    box-shadow: 0 -1px 8px 0px #555;       /* adds a shadow effect to the cards */
+    border: 1px solid var(--primary-color);  /* sets the card border color using the above primary color variable */
+    text-align: center;                      /* centers text inside the card */
+    padding: 5px;                            /* adds padding inside the card */
+}

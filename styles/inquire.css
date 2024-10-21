@@ -1,0 +1,12 @@
+/* textbox styling */
+input[type="text"], input[type="email"], textarea {
+    border-radius: 10px;  /* default radius of rest of site */
+}
+
+/* submit button */
+.submit-button {
+    background-color: #ccc;  /* sets background color of submit button for better visuals */
+    padding: 5px 10px;         /* sets padding to make button appear wider */
+    border-radius: 10px;       /* default rounded border */
+    margin-top: 10px;          /* space between button and above form content */
+}

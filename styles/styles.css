@@ -1,0 +1,89 @@
+:root {
+    --primary-color: #60D937;           /* primary color of my site */
+    --default-font: verdana, sans-serif;  /* primary font of my site */
+    --default-padding: 10px;              /* default padding to make everything cohesive */
+    
+    --selected-page-link-color: #eee;  /* background color for the selected page link */
+    --hovered-page-link-color: #eee;   /* background color for a hovered page link */
+}
+
+body {
+    font-family: var(--default-font);  /* applies the default font (defined above) to the entire page */
+    box-sizing: border-box;            /* ensures padding and borders are included in the total element dimensions */
+    margin: 0;                         /* removes the default margin so I can assign it later */
+}
+
+a {
+    color: var(--primary-color);  /* sets the text color for all links to the primary color */
+}
+
+p {
+    padding: var(--default-padding);  /* applies the default padding around paragraphs */
+}
+
+/* header */
+header {
+    position: sticky;                       /* makes the header stick to the top of the page when scrolling */
+    top: 0;                                 /* position the header at the top of the page */
+    display: flex;                          /* flexbox for better layout management */
+    align-items: center;                    /* vertically centers items inside the header */
+    background-color: white;              /* sets the header background color to white (so you can't see through it while scrolling */
+    box-shadow: 0 -1px 8px 0px #aaa;      /* adds a subtle shadow to the header for depth effect (see figma) */
+    padding-right: var(--default-padding);  /* adds padding to the right of the header for nav buttons */
+    z-index: 999;                           /* ensures the header stays above other content */
+}
+
+header > h1 {
+    margin: 0;  /* removes the default margin for the h1 element in the header */
+}
+
+header > div.spacer {
+    flex-grow: 1;  /* has the spacer take up remaining space in the header, pushing title and nav buttons to the sides */
+}
+
+header > img {
+    padding: var(--default-padding);  /* adds padding around the image in the header */
+}
+
+nav ul {
+    list-style-type: none;  /* removes default bullet points from list items in the nav */
+    margin: 0;              /* removes default margin from the unordered list */
+}
+
+nav li {
+    display: inline-block;  /* displays each list item inline, allowing horizontal layout */
+}
+
+/* use this special syntax to not trigger hover effects for selected page */
+nav li:not(.selected-page) a:hover {
+    background-color: var(--hovered-page-link-color);  /* changes background color when hovering over non-selected page links */
+    border-radius: 10px;                               /* rounds the corners of the hovered link */
+}
+
+nav li.selected-page a {
+    background-color: var(--selected-page-link-color);  /* sets background color for the selected page link */
+    border-radius: 10px;                                /* rounds the corners of the selected link per usual */
+}
+
+nav a {
+    display: inline-block;  /* for better layout */
+    padding: 10px;          /* adds padding around the links for better spacing */
+    text-decoration: none;  /* removes default underline from the button links */
+    color: black;         /* sets the default text color for the button links */
+}
+
+/* section headings */
+h2, h3 {
+    padding: var(--default-padding);  /* adds padding around section headings */
+    margin: 0;                        /* removes default margin for section headings */
+}
+
+/* footer */
+footer {
+    display: flex;                          /* uses flexbox to align items better */
+    align-items: center;                    /* vertically centers items inside the footer */
+    background-color: #aaa;               /* sets the background color of the footer */
+    box-shadow: 0 -1px 8px 0px #aaa;      /* adds a shadow to the footer for same depth effect as header */
+    padding-right: var(--default-padding);  /* adds padding to the right of the footer */
+    margin-top: 20px;                       /* adds a margin between the footer and the content above */
+}

@@ -3,26 +3,30 @@
     --main-buttons-hover-color: #222;
     --card-background-color: #F5F5F5;
     --primary-color-translucent: #00DC00B2;
+    --header-internal-pad: 60px;
 }
 
 /* first section */
 .first-section {
     height: 500px;                                                                  /* sets the height of the first section */
     position: relative;                                                             /* sets the position relative for absolute positioning below */
-    background-image: linear-gradient(90deg, var(--primary-color-translucent) 0%, var(--primary-color) 100%), url('../images/bg-code.png');
+    background-image: linear-gradient(90deg, var(--primary-color-translucent) 0%, 
+    var(--primary-color) 100%), url('../images/bg-code.png');
+    background-size: auto, cover;  /* show more of the background image */
 }
 
 .first-section h2 {
     position: absolute;  /* positions the using the below constraints */
-    top: 30px;           /* places the heading 30px from the top */
-    left: 30px;          /* places the heading 30px from the left */
-    font-size: 48px;     /* sets a large font size for the heading */
+    top: var(--header-internal-pad);           /* places the heading 30px from the top */
+    left: var(--header-internal-pad);          /* places the heading 30px from the left */
+    font-size: 3.5rem;     /* sets a large font size for the heading */
+    padding: 0;
 }
 
 .first-section #main-buttons-container {
     position: absolute;  /* positions the using the below constraints */
-    bottom: 45px;        /* places the container 45px from the bottom */
-    right: 30px;         /* places the container 30px from the right */
+    bottom: var(--header-internal-pad);        /* places the container 45px from the bottom */
+    right: var(--header-internal-pad);         /* places the container 30px from the right */
 }
 
 #main-buttons-container > a {
@@ -32,6 +36,7 @@
     text-decoration: none;                        /* removes the underline from links */
     color: white;                               /* sets the button text color to white */
     font-weight: normal;                            /* makes the button text bold */
+    display: inline-block;
 }
 
 #main-buttons-container > a:hover {

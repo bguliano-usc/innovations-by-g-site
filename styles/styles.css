@@ -103,8 +103,8 @@ footer {
 }
 
 /* main */
-main > *:not(.first-section) {
-    margin: 30px;
+main > section:not(.first-section) {
+    margin: 70px 50px;
 }
 
 /* space out section divs */

@@ -15,7 +15,6 @@ html, body {
 
 body {
     font-family: var(--default-font);  /* applies the default font (defined above) to the entire page */
-    font-weight: lighter;
     box-sizing: border-box;            /* ensures padding and borders are included in the total element dimensions */
     margin: 0;                         /* removes the default margin so I can assign it later */
     display: flex;

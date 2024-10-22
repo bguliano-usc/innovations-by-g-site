@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #60D937;           /* primary color of my site */
-    --default-font: verdana, sans-serif;  /* primary font of my site */
+    --primary-color: #00DC00;           /* primary color of my site */
+    --default-font: Inter, sans-serif;  /* primary font of my site */
     --default-padding: 10px;              /* default padding to make everything cohesive */
     
     --selected-page-link-color: #eee;  /* background color for the selected page link */
@@ -15,6 +15,7 @@ html, body {
 
 body {
     font-family: var(--default-font);  /* applies the default font (defined above) to the entire page */
+    font-weight: lighter;
     box-sizing: border-box;            /* ensures padding and borders are included in the total element dimensions */
     margin: 0;                         /* removes the default margin so I can assign it later */
     display: flex;
@@ -47,6 +48,7 @@ header {
 
 header > h1 {
     margin: 0;  /* removes the default margin for the h1 element in the header */
+    font-weight: lighter;
 }
 
 header > div.spacer {

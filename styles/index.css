@@ -2,13 +2,14 @@
     --main-buttons-color: #444;  /* sets the main color for buttons */
     --main-buttons-hover-color: #222;
     --card-background-color: #F5F5F5;
+    --primary-color-translucent: #00DC00B2;
 }
 
 /* first section */
 .first-section {
     height: 500px;                                                                  /* sets the height of the first section */
-    background: linear-gradient(90deg, rgba(0, 220, 0, 0.70) 0%, #00DC00 100%); /* applies a green gradient background per figma */
     position: relative;                                                             /* sets the position relative for absolute positioning below */
+    background-image: linear-gradient(90deg, var(--primary-color-translucent) 0%, var(--primary-color) 100%), url('../images/bg-code.png');
 }
 
 .first-section h2 {
@@ -30,7 +31,7 @@
     border-radius: 10px;                          /* rounds the corners of the buttons */
     text-decoration: none;                        /* removes the underline from links */
     color: white;                               /* sets the button text color to white */
-    font-weight: bold;                            /* makes the button text bold */
+    font-weight: normal;                            /* makes the button text bold */
 }
 
 #main-buttons-container > a:hover {

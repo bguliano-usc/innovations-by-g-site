@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Innovation by G is a technology consulting and systems integration company that helps businesses thrive in the digital era.">
+    <meta name="description"
+        content="Innovation by G is a technology consulting and systems integration company that helps businesses thrive in the digital era.">
     <meta name="keywords" content="consulting, systems, integration, custom, solutions, IT, technology">
     <meta name="author" content="Braden Guliano">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +16,11 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PECYCYNEQC"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-PECYCYNEQC');
+    gtag('config', 'G-PECYCYNEQC');
 </script>
 
 <body>
@@ -27,74 +28,81 @@
     <header>
         <img src="images/logo.png" alt="Innovation by G logo" width="50" height="50">
         <h1>Innovation by G</h1>
-        <div class="spacer"></div>        <nav role="navigation">
+        <div class="spacer"></div>
+        <nav role="navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li class="selected-page"><a href="inquire.html">Inquire</a></li>
+                <li class="selected-page"><a href="inquire.html" aria-current="page">Inquire</a></li>
             </ul>
         </nav>
     </header>
 
-    <section>
-        <h2>Inquire</h2>
-        <p class="h1-description">At Innovations by G, we're always ready to assist. To get started using our services,
-            please fill out the form below. For all questions, please send us an email at the address located at the
-            bottom of this page.</p>
-    </section>
+    <main>
 
-    <section>
-        <form action="#" method="post">
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
+        <section class="first-section">
+            <h2>Inquire</h2>
+            <p class="h1-description">At Innovations by G, we're always ready to assist. To get started using our
+                services,
+                please fill out the form below. For all questions, please send us an email at the address located at the
+                bottom of this page.</p>
+        </section>
 
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div>
-                <p>Type of service requesting:</p>
-                <input type="radio" id="technology-consulting" name="service" value="technology-consulting" required>
-                <label for="technology-consulting">Technology Consulting</label>
-
-                <input type="radio" id="systems-integration" name="service" value="systems-integration">
-                <label for="systems-integration">Systems Integration</label>
-
-                <input type="radio" id="custom-solutions" name="service" value="custom-solutions">
-                <label for="custom-solutions">Custom Solutions</label>
-            </div>
-
-            <div class="textarea-container">
+        <section>
+            <form action="#" method="post">
                 <div>
-                    <label for="goals">Goals in mind:</label>
-                    <textarea id="goals" name="goals" rows="4" cols="30"></textarea>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
 
                 <div>
-                    <label for="current-process">What process are you currently using?</label>
-                    <textarea id="current-process" name="current-process" rows="4" cols="30"></textarea>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
 
                 <div>
-                    <label for="initial-ideas">Describe any initial ideas:</label>
-                    <textarea id="initial-ideas" name="initial-ideas" rows="4" cols="30"></textarea>
+                    <p>Type of service requesting:</p>
+                    <input type="radio" id="technology-consulting" name="service" value="technology-consulting"
+                        required>
+                    <label for="technology-consulting">Technology Consulting</label>
+
+                    <input type="radio" id="systems-integration" name="service" value="systems-integration">
+                    <label for="systems-integration">Systems Integration</label>
+
+                    <input type="radio" id="custom-solutions" name="service" value="custom-solutions">
+                    <label for="custom-solutions">Custom Solutions</label>
                 </div>
-            </div>
 
-            <div>
-                <label for="additional-notes">Additional notes:</label>
-                <textarea id="additional-notes" name="additional-notes" rows="4" cols="50"></textarea>
-            </div>
+                <div class="textarea-container">
+                    <div>
+                        <label for="goals">Goals in mind:</label>
+                        <textarea id="goals" name="goals" rows="4" cols="30"></textarea>
+                    </div>
 
-            <div>
-                <input type="submit" value="Submit" class="submit-button">
-            </div>
-        </form>
-    </section>
+                    <div>
+                        <label for="current-process">What process are you currently using?</label>
+                        <textarea id="current-process" name="current-process" rows="4" cols="30"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="initial-ideas">Describe any initial ideas:</label>
+                        <textarea id="initial-ideas" name="initial-ideas" rows="4" cols="30"></textarea>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="additional-notes">Additional notes:</label>
+                    <textarea id="additional-notes" name="additional-notes" rows="4" cols="50"></textarea>
+                </div>
+
+                <div>
+                    <input type="submit" value="Submit" class="submit-button">
+                </div>
+            </form>
+        </section>
+
+    </main>
 
     <footer>
         <div>

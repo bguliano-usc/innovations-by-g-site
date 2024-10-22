@@ -1,5 +1,7 @@
 :root {
     --main-buttons-color: #444;  /* sets the main color for buttons */
+    --main-buttons-hover-color: #222;
+    --card-background-color: #F5F5F5;
 }
 
 /* first section */
@@ -16,19 +18,23 @@
     font-size: 48px;     /* sets a large font size for the heading */
 }
 
-.first-section .main-buttons-container {
+.first-section #main-buttons-container {
     position: absolute;  /* positions the using the below constraints */
     bottom: 45px;        /* places the container 45px from the bottom */
     right: 30px;         /* places the container 30px from the right */
 }
 
-.first-section a {
+#main-buttons-container > a {
     background-color: var(--main-buttons-color);  /* applies the main button color */
     padding: 15px;                                /* adds padding inside the buttons */
     border-radius: 10px;                          /* rounds the corners of the buttons */
     text-decoration: none;                        /* removes the underline from links */
     color: white;                               /* sets the button text color to white */
     font-weight: bold;                            /* makes the button text bold */
+}
+
+#main-buttons-container > a:hover {
+    background-color: var(--main-buttons-hover-color);
 }
 
 .first-section a:first-child {
@@ -41,11 +47,28 @@
 }
 
 .card {
-    background-color: #ddd;                /* sets a light grey background for the cards */
+    background-color: var(--card-background-color);                /* sets a light grey background for the cards */
     margin: 10px;                            /* adds a margin around each card */
     border-radius: 10px;                     /* rounds the corners of each card */
-    box-shadow: 0 -1px 8px 0px #555;       /* adds a shadow effect to the cards */
-    border: 1px solid var(--primary-color);  /* sets the card border color using the above primary color variable */
     text-align: center;                      /* centers text inside the card */
     padding: 5px;                            /* adds padding inside the card */
+    border: 2px solid var(--primary-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* background styling for bordered divs */
+div.bordered {
+    padding: 50px;
+    background-image: url('../images/corner-tl.png'), url('../images/corner-br.png');
+    background-position: top left, bottom right;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 50px 50px, 50px, 50px;
+}
+
+/* about us */
+#about-us img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    padding: var(--default-padding);
 }

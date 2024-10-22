@@ -5,12 +5,24 @@
     
     --selected-page-link-color: #eee;  /* background color for the selected page link */
     --hovered-page-link-color: #eee;   /* background color for a hovered page link */
+
+    --footer-color: #D9D9D9;
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
     font-family: var(--default-font);  /* applies the default font (defined above) to the entire page */
     box-sizing: border-box;            /* ensures padding and borders are included in the total element dimensions */
     margin: 0;                         /* removes the default margin so I can assign it later */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 a {
@@ -28,7 +40,7 @@ header {
     display: flex;                          /* flexbox for better layout management */
     align-items: center;                    /* vertically centers items inside the header */
     background-color: white;              /* sets the header background color to white (so you can't see through it while scrolling */
-    box-shadow: 0 -1px 8px 0px #aaa;      /* adds a subtle shadow to the header for depth effect (see figma) */
+    box-shadow: 0px 3px 9.4px 0px rgba(0, 0, 0, 0.25);      /* adds a subtle shadow to the header for depth effect (see figma) */
     padding-right: var(--default-padding);  /* adds padding to the right of the header for nav buttons */
     z-index: 999;                           /* ensures the header stays above other content */
 }
@@ -82,8 +94,19 @@ h2, h3 {
 footer {
     display: flex;                          /* uses flexbox to align items better */
     align-items: center;                    /* vertically centers items inside the footer */
-    background-color: #aaa;               /* sets the background color of the footer */
-    box-shadow: 0 -1px 8px 0px #aaa;      /* adds a shadow to the footer for same depth effect as header */
+    background-color: var(--footer-color);               /* sets the background color of the footer */
+    box-shadow: 0px -3px 9.4px 0px rgba(0, 0, 0, 0.25);      /* adds a shadow to the footer for same depth effect as header */
     padding-right: var(--default-padding);  /* adds padding to the right of the footer */
     margin-top: 20px;                       /* adds a margin between the footer and the content above */
+}
+
+/* main */
+main > *:not(.first-section) {
+    margin: 30px;
+}
+
+/* space out section divs */
+section > div {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

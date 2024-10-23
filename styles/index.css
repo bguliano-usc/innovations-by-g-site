@@ -1,3 +1,13 @@
+/*
+
+classes should be denoted
+    element.class
+
+ids should be denoted
+    #id
+
+*/
+
 :root {
     --main-buttons-color: #444;  /* sets the main color for buttons */
     --main-buttons-hover-color: #222;
@@ -6,16 +16,16 @@
     --header-internal-pad: 60px;
 }
 
-/* first section */
-.first-section {
+/* heading section */
+section.heading-section {
     height: 500px;                                                                  /* sets the height of the first section */
     position: relative;                                                             /* sets the position relative for absolute positioning below */
-    background-image: linear-gradient(90deg, var(--primary-color-translucent) 0%, 
-    var(--primary-color) 100%), url('../images/bg-code.png');
+    background-image: linear-gradient(90deg, var(--primary-color-translucent) 0%, var(--primary-color) 100%), url('../images/bg-code.png');
     background-size: auto, cover;  /* show more of the background image */
 }
 
-.first-section h2 {
+/* heading section - title */
+section.heading-section h2 {
     position: absolute;  /* positions the using the below constraints */
     top: var(--header-internal-pad);           /* places the heading 30px from the top */
     left: var(--header-internal-pad);          /* places the heading 30px from the left */
@@ -23,28 +33,36 @@
     padding: 0;
 }
 
-.first-section #main-buttons-container {
+/* heading section - first button */
+section.heading-section a:first-child {
+    margin-right: 10px;  /* adds space to the right of the first button */
+}
+
+/* heading section - div containing button */
+#main-buttons-container {
     position: absolute;  /* positions the using the below constraints */
     bottom: var(--header-internal-pad);        /* places the container 45px from the bottom */
     right: var(--header-internal-pad);         /* places the container 30px from the right */
 }
 
+/* heading section - actual anchor buttons */
 #main-buttons-container > a {
     background-color: var(--main-buttons-color);  /* applies the main button color */
     padding: 15px;                                /* adds padding inside the buttons */
     border-radius: 10px;                          /* rounds the corners of the buttons */
     text-decoration: none;                        /* removes the underline from links */
     color: white;                               /* sets the button text color to white */
-    font-weight: normal;                            /* makes the button text bold */
+    font-weight: normal;                          /* makes the button text bold */
     display: inline-block;
 }
 
+/* heading section - anchor buttons on hover */
 #main-buttons-container > a:hover {
     background-color: var(--main-buttons-hover-color);
 }
 
-.first-section a:first-child {
-    margin-right: 10px;  /* adds space to the right of the first button */
+div.section-div-content > p {
+    margin: 0;
 }
 
 /* cards */
@@ -60,6 +78,12 @@
     padding: 5px;                            /* adds padding inside the card */
     border: 2px solid var(--primary-color);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    flex: 1;
 }
 
 /* background styling for bordered divs */
@@ -77,4 +101,28 @@ div.bordered {
     width: 100px;
     height: 100px;
     padding: var(--default-padding);
+}
+
+#why-choose-us img {
+    width: 100px;
+    height: 100px;
+}
+
+div.card > * {
+    margin: 5px;
+}
+
+div.card > h4 {
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+
+/* space out section divs */
+main > section > div {
+    margin: 70px 50px;
+}
+
+.section-div-content {
+    display: flex;
+    align-items: center;
 }

@@ -70,12 +70,10 @@ nav li {
 /* use this special syntax to not trigger hover effects for selected page */
 nav li:not(.selected-page) a:hover {
     background-color: var(--hovered-page-link-color);  /* changes background color when hovering over non-selected page links */
-    border-radius: 10px;                               /* rounds the corners of the hovered link */
 }
 
 nav li.selected-page a {
     background-color: var(--selected-page-link-color);  /* sets background color for the selected page link */
-    border-radius: 10px;                                /* rounds the corners of the selected link per usual */
 }
 
 nav a {
@@ -83,6 +81,7 @@ nav a {
     padding: 10px;          /* adds padding around the links for better spacing */
     text-decoration: none;  /* removes default underline from the button links */
     color: black;         /* sets the default text color for the button links */
+    border-radius: 10px;    /* rounds the corners of the link */
 }
 
 /* section headings */
@@ -101,13 +100,45 @@ footer {
     margin-top: 20px;                       /* adds a margin between the footer and the content above */
 }
 
-/* main */
-main > section:not(.first-section) {
-    margin: 70px 50px;
+div.vertical-line {
+    border-left: 1px solid #000;
+    height: 80%;
 }
 
-/* space out section divs */
-section > div {
-    margin-top: 20px;
-    margin-bottom: 20px;
+#contact-us {
+    display: flex;
+    padding: 0px 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#contact-us * {
+    margin: 0;
+    padding: 0;
+}
+
+#contact-us-email-phone {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+#contact-us-social-media {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#contact-us-email-phone > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#contact-us-email-phone p {
+    white-space: nowrap;
 }

@@ -9,4 +9,5 @@ input[type="text"], input[type="email"], textarea {
     padding: 5px 10px;         /* sets padding to make button appear wider */
     border-radius: 10px;       /* default rounded border */
     margin-top: 10px;          /* space between button and above form content */
+    cursor: pointer;
 }

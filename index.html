@@ -10,6 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/index.css">
+    <!-- Download Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <title>Home</title>
 </head>
 
@@ -41,7 +47,7 @@
 
     <main>
 
-        <section class="first-section">
+        <section class="heading-section">
             <h2>Innovation lives here.</h2>
             <span id="main-buttons-container">
                 <a href="services.html">Explore Services</a>
@@ -51,40 +57,47 @@
 
         <section>
 
-            <div class="bordered" id="our-mission">
-                <h3>Our Mission</h3>
-                <p>At Innovations by G, we deliver technology consulting and systems integration services to bring
-                    businesses up to date with the latest industry standards. Whether you're a small business owner or a
-                    large organization, we're here to guide you through the process. Explore our site to learn more
-                    about
-                    our services and how we can help you expand your technological palette.</p>
+            <div class="section-div bordered" id="our-mission">
+                <h3 class="section-div-title">Our Mission</h3>
+                <div class="section-div-content">
+                    <p>At Innovations by G, we deliver technology consulting and systems integration services to bring
+                        businesses up to date with the latest industry standards. Whether you're a small business owner
+                        or a
+                        large organization, we're here to guide you through the process. Explore our site to learn more
+                        about our services and how we can help you expand your technological palette.</p>
+                </div>
             </div>
 
-            <div class="bordered" id="about-us">
-                <h3>About Us</h3>
-                <img src="images/braden.png" alt="Braden">
-                <p>Innovations by G is owned and operated by Braden Guliano, a technology expert with over 8 years of
-                    experience. Our mission is to provide businesses with innovative, practical solutions that make a
-                    real
-                    impact. Each step of the process, we work hands-on with every client to ensure their technology
-                    infrastructure is built for success.</p>
+            <div class="section-div bordered" id="about-us">
+                <h3 class="section-div-title">About Us</h3>
+                <div class="section-div-content">
+                    <img src="images/braden.png" alt="Profile picture of Braden">
+                    <p>Innovations by G is owned and operated by Braden Guliano, a technology expert with over 8 years
+                        of experience. Our mission is to provide businesses with innovative, practical solutions that
+                        make a real impact. Each step of the process, we work hands-on with every client to ensure their
+                        technology infrastructure is built for success.</p>
+                </div>
             </div>
 
-            <div class="cards-container">
-                <div class="card">
-                    <img src="images/expertise.jpg" alt="Expertise">
-                    <h4>Expertise</h4>
-                    <p>We bring years of industry experience in consulting and systems integration.</p>
-                </div>
-                <div class="card">
-                    <img src="images/tailored-solutions.jpg" alt="Tailored Solutions">
-                    <h4>Tailored Solutions</h4>
-                    <p>Every client receives a personalized strategy that fits their specific needs.</p>
-                </div>
-                <div class="card">
-                    <img src="images/client-focused.jpg" alt="Client-Focused">
-                    <h4>Client-Focused</h4>
-                    <p>We prioritize communication and collaboration throughout the project.</p>
+            <div class="section-div" id="why-choose-us">
+                <h3 class="section-div-title">Why Choose Us?</h3>
+                <div class="section-div-content">
+                    <div class="card">
+                        <!-- No alt text needed for decorative images -->
+                        <img src="images/why-choose-us/expertise.png" alt="">
+                        <h4>Expertise</h4>
+                        <p>We bring years of industry experience in consulting and systems integration.</p>
+                    </div>
+                    <div class="card">
+                        <img src="images/why-choose-us/tailored-solutions.png" alt="">
+                        <h4>Tailored Solutions</h4>
+                        <p>Every client receives a personalized strategy that fits their specific needs.</p>
+                    </div>
+                    <div class="card">
+                        <img src="images/why-choose-us/client-focused.png" alt="">
+                        <h4>Client-Focused</h4>
+                        <p>We prioritize communication and collaboration throughout the project.</p>
+                    </div>
                 </div>
             </div>
 
@@ -93,26 +106,27 @@
     </main>
 
     <footer>
-        <div>
-            <img src="images/logo-big.png" width="300px" alt="logo-big">
-        </div>
-        <div>
-            <p>We provide technology consulting and systems integration services that can help any business
-                streamline operations and thrive in the digital era.</p>
-        </div>
-        <div>
-            <h3>Contact Us</h3>
-            <p>Email</p>
-            <p>XXXXXXX@XXXXX.XXX</p>
-            <p>
-                <a href="#"><img src="images/facebook-icon.png" alt="Facebook" width="24" height="24"></a>
-                <a href="#"><img src="images/instagram-icon.png" alt="Instagram" width="24" height="24"></a>
-                <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn" width="24" height="24"></a>
-            </p>
-        </div>
-        <div>
-            <p>Phone</p>
-            <p>XXX-XXX-XXXX</p>
+        <img src="images/logo-big.png" width="300px" alt="Larger Innovation by G logo">
+        <p>We provide technology consulting and systems integration services that can help any business
+            streamline operations and thrive in the digital era.</p>
+        <div class="vertical-line"></div>
+        <div id="contact-us">
+            <div id="contact-us-email-phone">
+                <div>
+                    <h3>Contact Us</h3>
+                    <p>Email</p>
+                    <p>XXXXXXX@XXXXX.XXX</p>
+                </div>
+                <div>
+                    <p>Phone</p>
+                    <p>XXX-XXX-XXXX</p>
+                </div>
+            </div>
+            <div id="contact-us-social-media">
+                <a href="#"><img src="images/footer-icons/facebook.png" alt="Facebook icon" width="24" height="24"></a>
+                <a href="#"><img src="images/footer-icons/instagram.png" alt="Instagram icon" width="24" height="24"></a>
+                <a href="#"><img src="images/footer-icons/linkedin.png" alt="LinkedIn icon" width="24" height="24"></a>
+            </div>
         </div>
     </footer>
 

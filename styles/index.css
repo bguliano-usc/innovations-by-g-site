@@ -66,9 +66,6 @@ div.section-div-content > p {
 }
 
 /* cards */
-.cards-container {
-    display: flex;  /* displays the cards in a flex container */
-}
 
 .card {
     background-color: var(--card-background-color);                /* sets a light grey background for the cards */
@@ -84,6 +81,7 @@ div.section-div-content > p {
     align-items: center;
     aspect-ratio: 1/1;
     flex: 1;
+    max-width: 300px;
 }
 
 /* background styling for bordered divs */
@@ -108,6 +106,10 @@ div.bordered {
     height: 100px;
 }
 
+#why-choose-us h3.section-div-title {
+    text-align: center;
+}
+
 div.card > * {
     margin: 5px;
 }
@@ -125,4 +127,5 @@ main > section > div {
 .section-div-content {
     display: flex;
     align-items: center;
+    justify-content: center;
 }

@@ -47,12 +47,12 @@
 
     <main>
 
-        <section class="first-section">
+        <section class="heading-section">
             <h2>Our Services</h2>
             <p class="h1-description">Discover what we can do for your business.</p>
         </section>
 
-        <section>
+        <section class="content-section">
             <div class="card">
                 <!-- No alt text needed for decorative images -->
                 <img src="images/technology-consulting.png" alt="">
@@ -61,7 +61,24 @@
                     <p>Our IT consulting services are designed to identify your needs and provide actionable
                         recommendations.</p>
                 </div>
-                <img src="images/chevron-right.png" alt="Dropdown arrow for technology consulting card">
+                <img class="dropdown-arrow" src="images/chevron.svg"
+                    alt="Dropdown arrow for technology consulting card">
+                <div class="card-dropdown">
+                    <ol>
+                        <li><strong>Discovery:</strong> We begin by understanding your business goals, current IT
+                            infrastructure, and challenges during a discovery session. This ensures that we fully grasp
+                            where you are and where you want to go.</li>
+                        <li><strong>Gap Analysis:</strong> We will conduct a thorough analysis to identify gaps between
+                            your current technology setup and your desired outcomes.</li>
+                        <li><strong>Strategy Development:</strong> Based on the findings, we will issue recommendations
+                            for system upgrades, process improvements, and new technologies that will boost efficiency
+                            and growth.</li>
+                        <li><strong>Implementation Planning:</strong> We then provide a detailed plan for implementing
+                            the recommended changes. This covers timelines, potential costs, and expected outcomes.</li>
+                        <li><strong>Final Demo:</strong> Finally, we will demonstrate the working product(s) and will
+                            give a presentation to discuss its use and maintenance.</li>
+                    </ol>
+                </div>
             </div>
 
             <div class="card">
@@ -72,7 +89,29 @@
                         bolster
                         your operations.</p>
                 </div>
-                <img src="images/chevron-right.png" alt="Dropdown arrow for systems integration card">
+                <img class="dropdown-arrow" src="images/chevron.svg" alt="Dropdown arrow for systems integration card">
+                <div class="card-dropdown">
+                    <ol>
+                        <li><strong>Initial Evaluation:</strong> We start by evaluating your current systems, software,
+                            and hardware to identify inefficiencies, redundancies, and potential integration points.
+                        </li>
+                        <li><strong>Solution Design:</strong> Once the systems are assessed, we design a custom
+                            integration plan that ensures all components work together smoothly.</li>
+                        <li><strong>Compatibility Check:</strong> Alongside step 2, we will validate software
+                            compatibility, data flow, and overall architecture integrates with your existing systems.
+                        </li>
+                        <li><strong>Integration Planning:</strong> We develop a clear roadmap detailing how the
+                            integration will take place, outlining the systems to be connected, the tools required, and
+                            a timeline for each phase.</li>
+                        <li><strong>Implementation:</strong> Our team performs the integration of your systems,
+                            according to the plan, and ensures that data flows efficiently between them.</li>
+                        <li><strong>Testing & Optimization:</strong> After integrating the systems, we thoroughly test
+                            everything to ensure they function as one cohesive unit. We troubleshoot any issues that
+                            arise and optimize the processes for performance, speed, and security.</li>
+                        <li><strong>Final Demo:</strong> Finally, we will demonstrate the working product(s) and will
+                            give a presentation to discuss its use and maintenance.</li>
+                    </ol>
+                </div>
             </div>
 
             <div class="card">
@@ -83,28 +122,29 @@
                         tailored to
                         meet your specific needs.</p>
                 </div>
-                <img src="images/chevron-down.png" alt="Open dropdown arrow for custom solutions card">
-            </div>
-            <div class="card-dropdown">
-                <ol>
-                    <li><strong>Initial Consultation:</strong> An in-depth consultation to understand your business's
-                        unique
-                        challenges, goals, and technology needs.</li>
-                    <li><strong>Needs Assessment:</strong> We conduct a thorough analysis of your current processes to
-                        identify several custom plans.</li>
-                    <li><strong>Proposal:</strong> We present a customized solution based on your specific requirements,
-                        including software requirements, hardware configuration, and potential system integrations.</li>
-                    <li><strong>Implementation:</strong> We design and implement the custom solution, ensuring it meets
-                        all
-                        the expected goals.</li>
-                    <li><strong>Testing & Refinement:</strong> Before full deployment, we rigorously test the chosen
-                        solution, making necessary refinements based on real-world use cases and feedback.</li>
-                    <li><strong>Deployment & Staff Training:</strong> Once the solution is finalized, we handle
-                        deployment
-                        and provide training to ensure your team is ready to leverage the new system.</li>
-                    <li><strong>Final Demo:</strong> Finally, we will demonstrate the working products and will give a
-                        presentation to discuss its use and maintenance.</li>
-                </ol>
+                <img class="dropdown-arrow" src="images/chevron.svg"
+                    alt="Open dropdown arrow for custom solutions card">
+                <div class="card-dropdown">
+                    <ol>
+                        <li><strong>Initial Consultation:</strong> An in-depth consultation to understand your
+                            business's unique challenges, goals, and technology needs.</li>
+                        <li><strong>Needs Assessment:</strong> We conduct a thorough analysis of your current processes
+                            to identify several custom plans.</li>
+                        <li><strong>Proposal:</strong> We present a customized solution based on your specific
+                            requirements, including software requirements, hardware configuration, and potential system
+                            integrations.
+                        </li>
+                        <li><strong>Implementation:</strong> We design and implement the custom solution, ensuring it
+                            meets all the expected goals.</li>
+                        <li><strong>Testing & Refinement:</strong> Before full deployment, we rigorously test the chosen
+                            solution, making necessary refinements based on real-world use cases and feedback.</li>
+                        <li><strong>Deployment & Staff Training:</strong> Once the solution is finalized, we handle
+                            deployment and provide training to ensure your team is ready to leverage the new system.
+                        </li>
+                        <li><strong>Final Demo:</strong> Finally, we will demonstrate the working products and will give
+                            a presentation to discuss its use and maintenance.</li>
+                    </ol>
+                </div>
             </div>
         </section>
 
@@ -129,11 +169,22 @@
             </div>
             <div id="contact-us-social-media">
                 <a href="#"><img src="images/footer-icons/facebook.png" alt="Facebook icon" width="24" height="24"></a>
-                <a href="#"><img src="images/footer-icons/instagram.png" alt="Instagram icon" width="24" height="24"></a>
+                <a href="#"><img src="images/footer-icons/instagram.png" alt="Instagram icon" width="24"
+                        height="24"></a>
                 <a href="#"><img src="images/footer-icons/linkedin.png" alt="LinkedIn icon" width="24" height="24"></a>
             </div>
         </div>
     </footer>
+
+    <script>
+        let allCards = document.querySelectorAll('.card');
+        for (const card of allCards) {
+            card.addEventListener('click', function () {
+                card.classList.toggle('open');
+                for (const card2 of allCards) if (card !== card2) card2.classList.remove('open');
+            });
+        }
+    </script>
 
 </body>
 

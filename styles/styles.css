@@ -2,6 +2,7 @@
     --primary-color: #00DC00;           /* primary color of my site */
     --default-font: Inter, sans-serif;  /* primary font of my site */
     --default-padding: 10px;              /* default padding to make everything cohesive */
+    --default-border-radius: 10px;
     
     --selected-page-link-color: #eee;  /* background color for the selected page link */
     --hovered-page-link-color: #eee;   /* background color for a hovered page link */
@@ -11,12 +12,12 @@
 
 html, body {
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: var(--default-font);  /* applies the default font (defined above) to the entire page */
     box-sizing: border-box;            /* ensures padding and borders are included in the total element dimensions */
-    margin: 0;                         /* removes the default margin so I can assign it later */
     display: flex;
     flex-direction: column;
 }
@@ -25,12 +26,13 @@ main {
     flex: 1;
 }
 
-a {
-    color: var(--primary-color);  /* sets the text color for all links to the primary color */
+body, body * {
+    margin: 0;                         /* removes the default margin so I can assign it later */
+    padding: 0;
 }
 
-p {
-    padding: var(--default-padding);  /* applies the default padding around paragraphs */
+a {
+    color: var(--primary-color);  /* sets the text color for all links to the primary color */
 }
 
 /* header */
@@ -84,12 +86,6 @@ nav a {
     border-radius: 10px;    /* rounds the corners of the link */
 }
 
-/* section headings */
-h2, h3 {
-    padding: var(--default-padding);  /* adds padding around section headings */
-    margin: 0;                        /* removes default margin for section headings */
-}
-
 /* footer */
 footer {
     display: flex;                          /* uses flexbox to align items better */
@@ -141,4 +137,24 @@ div.vertical-line {
 
 #contact-us-email-phone p {
     white-space: nowrap;
+}
+
+.heading-section {
+    height: 200px;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    /* margin-bottom: var(--default-padding); */
+}
+
+.heading-section h2 {
+    font-size: 2rem;
+}
+
+.heading-section p {
+    font-size: 1.2rem;
 }

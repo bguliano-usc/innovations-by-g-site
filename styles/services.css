@@ -1,4 +1,53 @@
 /* card dropdown */
 .card-dropdown {
-    background-color: #eee;  /* sets background color of cards per figma */
+    background-color: #f5f5f5;  /* sets background color of cards per figma */
+    max-height: 0;
+    transition: all 0.3s linear;
+    overflow: hidden;
+    border-radius: 0 0 var(--default-border-radius) var(--default-border-radius);
+    padding: 0 40px;
+    width: 100%;
+}
+
+.card.open .card-dropdown {
+    max-height: 500px;
+    transition: all 0.3s linear;
+    padding: var(--default-padding) 40px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    border-radius: var(--default-border-radius);
+    border: 1px solid var(--footer-color);
+    margin: 20px;
+    cursor: pointer;
+}
+
+.card-content {
+    display: flex;
+    min-width: 160px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+    padding: var(--default-padding) 0;
+}
+
+.dropdown-arrow {
+    width: 48px;
+    height: 48px;
+    transition: all 0.3s linear;
+}
+
+/* only rotate the arrow if the card is open */
+.card.open .dropdown-arrow {
+    rotate: 90deg;
+}
+
+.card img {
+    width: 60px;
+    padding: 10px;
 }

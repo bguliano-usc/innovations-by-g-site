@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Innovation by G is a technology consulting and systems integration company that helps businesses thrive in the digital era.">
+    <meta name="description"
+        content="Innovation by G is a technology consulting and systems integration company that helps businesses thrive in the digital era.">
     <meta name="keywords" content="consulting, systems, integration, custom, solutions, IT, technology">
     <meta name="author" content="Braden Guliano">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,16 +22,16 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PECYCYNEQC"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-PECYCYNEQC');
+    gtag('config', 'G-PECYCYNEQC');
 </script>
 
 <body>
 
-    <header>
+    <header id="header">
         <img src="images/logo.png" alt="Innovation by G logo" width="50" height="50">
         <h1>Innovation by G</h1>
         <div class="spacer"></div>
@@ -45,22 +46,55 @@
     </header>
 
     <main>
-    
-        <section class="first-section">
+
+        <section class="heading-section">
             <h2>Gallery</h2>
             <p class="h1-description">Discover our past projects and transform your future.</p>
         </section>
 
         <section>
-            <div class="images-container">
-                <div><img src="images/gallery1.png" alt="Web dashboard displaying positive AI inspection result" width="300" height="200"></div>
-                <div><img src="images/gallery2.png" alt="Braden controlling a Boston Dynamics Spot robot on a factory floor" width="300" height="200"></div>
-                <div><img src="images/gallery3.png" alt="OCR iOS app showing DOT code information on a captured image of a tire" width="300" height="200"></div>
-                <div><img src="images/gallery4.png" alt="Braden and Spot in a manufacturing lab, talking with an IBM representative" width="300" height="200"></div>
-                <div><img src="images/gallery5.png" alt="Braden presenting a POC involving a Boston Dynamics Spot robot in a Michelin plant" width="300" height="200"></div>
-                <div><img src="images/gallery6.png" alt="Web dashboard displaying AI detection of components of a tire rim" width="300" height="200"></div>
+            <div class="image-container">
+                <ul class="image-gallery">
+                    <li>
+                        <img src="images/gallery/1.png" alt="Web dashboard displaying positive AI inspection result">
+                        <div class="overlay"><span>Dashboarding for visual inspection tasks</span></div>
+                    </li>
+                    <li>
+                        <img src="images/gallery/2.png"
+                            alt="Braden controlling a Boston Dynamics Spot robot on a factory floor">
+                        <div class="overlay"><span>Boston Dynamics Spot with thermal imaging for thermal visual inspection</span></div>
+                    </li>
+                    <li>
+                        <img src="images/gallery/3.png"
+                            alt="OCR iOS app showing DOT code information on a captured image of a tire">
+                        <div class="overlay"><span>Tire DOT code OCR app for mobile tire processing</span></div>
+                    </li>
+                    <li>
+                        <img src="images/gallery/4.png"
+                            alt="Braden and Spot in a manufacturing lab, talking with an IBM representative">
+                        <div class="overlay"><span>Boston Dynamics Spot integration into a manufacturing lab environment</span></div>
+                    </li>
+                    <li>
+                        <img src="images/gallery/5.png"
+                            alt="Braden presenting a POC involving a Boston Dynamics Spot robot in a Michelin plant">
+                        <div class="overlay"><span>POC presentation of consulting work</span></div>
+                    </li>
+                    <li>
+                        <img src="images/gallery/6.png"
+                            alt="Web dashboard displaying AI detection of components of a tire rim">
+                        <div class="overlay"><span>Mobile visual inspection with tablet camera</span></div>
+                    </li>
+                </ul>
             </div>
+
         </section>
+
+        <div id="image-modal">
+            <span id="modal-close">&times;</span>
+            <img id="modal-content">
+            <div id="modal-caption"></div>
+          </div>
+
     </main>
 
     <footer>
@@ -82,11 +116,40 @@
             </div>
             <div id="contact-us-social-media">
                 <a href="#"><img src="images/footer-icons/facebook.png" alt="Facebook icon" width="24" height="24"></a>
-                <a href="#"><img src="images/footer-icons/instagram.png" alt="Instagram icon" width="24" height="24"></a>
+                <a href="#"><img src="images/footer-icons/instagram.png" alt="Instagram icon" width="24"
+                        height="24"></a>
                 <a href="#"><img src="images/footer-icons/linkedin.png" alt="LinkedIn icon" width="24" height="24"></a>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("image-modal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var modalImg = document.getElementById("modal-content");
+        var captionText = document.getElementById("modal-caption");
+        var images = document.querySelectorAll(".image-gallery img");
+        var header = document.getElementById("header");
+
+        // assign click callbacks
+        for (const img of images) {
+            img.addEventListener('click', function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.nextElementSibling.children[0].innerHTML;
+                header.style.display = "none";
+            });
+        }
+
+        // Get the <span> element that closes the modal
+        var closeButton = document.getElementById("modal-close");
+        closeButton.addEventListener('click', function() {
+            modal.style.display = "none";
+            header.style.display = "flex";
+        });
+    </script>
 
 </body>
 

@@ -79,7 +79,7 @@ ul {
 #image-modal {
     display: none;                                    /* hides the modal by default */
     position: fixed;                                  /* fixes modal to the viewport */
-    z-index: 1;                                       /* ensures the modal appears above other content */
+    z-index: 999;                                       /* ensures the modal appears above other content */
     padding-top: 100px;                               /* adds padding above the modal content */
     left: 0;                                          /* aligns modal to the left edge */
     top: 0;                                           /* aligns modal to the top edge */

@@ -51,9 +51,3 @@
     width: 60px;    /* sets the width of images inside the card */
     padding: 10px;  /* adds padding around the images */
 }
-
-/* ------------------- additional services paragraph ------------------- */
-
-#additional-services {
-    text-align: center;  /* centers the text inside the additional services section */
-}

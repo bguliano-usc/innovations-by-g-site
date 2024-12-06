@@ -22,7 +22,7 @@
     max-width: 800px;  /* maximum width of the gallery */
 }
 
-.image-gallery>li {
+.image-gallery > li {
     flex: auto;          /* allows list items to grow as needed */
     height: 300px;       /* sets the height of the gallery items */
     cursor: pointer;     /* changes cursor to pointer on hover */
@@ -41,7 +41,7 @@
     vertical-align: middle;  /* aligns images vertically */
 }
 
-.image-gallery>li {
+.image-gallery > li {
     flex: 1 1 auto;      /* flexible growth for gallery items */
     height: 300px;       /* sets the height of the gallery items */
     cursor: pointer;     /* changes cursor to pointer on hover */

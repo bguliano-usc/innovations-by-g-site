@@ -3,8 +3,8 @@
     --button-background-color: #222;   /* button background color of header */
     --button-text-color: #fff;         /* button text color of header */
     --button-hover-color: #444;        /* button hover color */
-    --card-background-color: #F5F5F5;  /* background color for card elements */
-    --card-shadow-color: #00000040;
+    --card-background-color: #f5f5f5;  /* background color for card elements */
+    --card-shadow-color: #00000040;    /* translucent black shadow for card elements */
 }
 
 /* ------------------- override heading section from styles.css ------------------- */

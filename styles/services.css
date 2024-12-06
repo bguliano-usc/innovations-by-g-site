@@ -1,5 +1,5 @@
 :root {
-    --card-background-color: #eee;
+    --card-background-color: #f5f5f5;  /* default coloring of card background (consistent with index.css) */
 }
 
 /* ------------------- cards ------------------- */

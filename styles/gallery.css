@@ -1,159 +1,148 @@
+:root {
+    --overlay-text-color: #fff;              /* color for text overlay on images */
+    --overlay-background-color: #000000cc;   /* background color for text overlay on images */
+    --modal-background-color: #000000ee;     /* background color for the modal */
+    --modal-caption-text-color: #fff;        /* text color for modal captions */
+    --modal-close-button-color: #fff;        /* color for modal close button */
+    --modal-close-button-hover-color: #bbb;  /* color for modal close button on hover */
+}
+
+/* ------------------- waterfall design ------------------- */
+
 .image-container {
-    margin: 40px;
-    display: flex;
-    justify-content: center;
+    margin: 40px;             /* margin around the image container */
+    display: flex;            /* uses flexbox layout */
+    justify-content: center;  /* centers content horizontally */
 }
 
 ul {
-    list-style: none;
+    list-style: none;  /* removes bullet points from list */
 }
 
 .image-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    max-width: 800px;
+    display: flex;     /* uses flexbox for layout */
+    flex-wrap: wrap;   /* allows images to wrap to the next row */
+    gap: 10px;         /* spacing between images */
+    max-width: 800px;  /* maximum width of the gallery */
 }
 
 .image-gallery>li {
-    flex: auto;
-    /* or flex: auto; */
-    height: 300px;
-    cursor: pointer;
-    position: relative;
+    flex: auto;          /* allows list items to grow as needed */
+    height: 300px;       /* sets the height of the gallery items */
+    cursor: pointer;     /* changes cursor to pointer on hover */
+    position: relative;  /* positions elements relative to this container */
 }
 
 .image-gallery::after {
-    content: "";
-    flex-grow: 999;
+    content: "";     /* adds an empty flex item for alignment */
+    flex-grow: 999;  /* ensures proper alignment of gallery items */
 }
 
 .image-gallery li img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    vertical-align: middle;
+    object-fit: cover;       /* ensures images cover their containers */
+    width: 100%;             /* sets the width of images to fill the container */
+    height: 100%;            /* sets the height of images to fill the container */
+    vertical-align: middle;  /* aligns images vertically */
 }
 
 .image-gallery>li {
-    flex: 1 1 auto;
-    /* or flex: auto; */
-    height: 300px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    /* Ensure overlay stays within image bounds */
+    flex: 1 1 auto;      /* flexible growth for gallery items */
+    height: 300px;       /* sets the height of the gallery items */
+    cursor: pointer;     /* changes cursor to pointer on hover */
+    position: relative;  /* positions elements relative to this container */
+    overflow: hidden;    /* hides overflow content */
 }
+
+/* ------------------- text overlay/caption on images ------------------- */
 
 .overlay {
-    position: absolute;
-    width: 100%;
-    height: fit-content;
-    padding: 5px;
-    background: #000000cc;
-    /* Dark background for contrast */
-    bottom: 0;
-    /* Align to bottom of image */
-    left: 0;
-    transform: translateY(100%);
-    /* Start inside at the bottom */
-    opacity: 0;
-    /* Start invisible */
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    /* Smooth slide-in and fade-in */
-    color: #fff;
+    position: absolute;                                  /* absolute positioning within the gallery item */
+    width: 100%;                                         /* spans the full width of the image */
+    height: fit-content;                                 /* adjusts height based on content */
+    padding: 5px;                                        /* padding around overlay content */
+    background: var(--overlay-background-color);         /* translucent black background */
+    bottom: 0;                                           /* positions overlay at the bottom of the image */
+    left: 0;                                             /* aligns overlay to the left edge */
+    transform: translateY(100%);                         /* hides overlay below the image */
+    opacity: 0;                                          /* makes the overlay invisible */
+    transition: transform 0.3s ease, opacity 0.3s ease;  /* smooth transition for visibility */
+    color: var(--overlay-text-color);                    /* sets text color for the overlay */
 }
 
-/* Hover effect to slide the overlay up and make it visible */
 .image-gallery li:hover .overlay {
-    transform: translateY(0);
-    /* Slide up from within the image */
-    opacity: 1;
-    /* Fade in on hover */
+    transform: translateY(0);  /* slides overlay into view */
+    opacity: 1;                /* makes overlay fully visible */
 }
 
-/* The Modal (background) */
+/* ------------------- image magnification modal ------------------- */
+
 #image-modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    padding-top: 100px;
-    /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.9);
-    /* Black w/ opacity */
+    display: none;                                    /* hides the modal by default */
+    position: fixed;                                  /* fixes modal to the viewport */
+    z-index: 1;                                       /* ensures the modal appears above other content */
+    padding-top: 100px;                               /* adds padding above the modal content */
+    left: 0;                                          /* aligns modal to the left edge */
+    top: 0;                                           /* aligns modal to the top edge */
+    width: 100%;                                      /* spans the full width of the viewport */
+    height: 100%;                                     /* spans the full height of the viewport */
+    overflow: auto;                                   /* allows scrolling if content overflows */
+    background-color: var(--modal-background-color);  /* sets the background color for the modal */
 }
 
-/* Modal Content (Image) */
 #modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
+    margin: auto;      /* centers modal content horizontally */
+    display: block;    /* ensures content is displayed as a block */
+    width: 80%;        /* sets the width of modal content */
+    max-width: 700px;  /* limits the width of modal content */
 }
 
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
 #modal-caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
+    margin: auto;                            /* centers caption text horizontally */
+    display: block;                          /* ensures caption is displayed as a block */
+    width: 80%;                              /* sets the width of the caption */
+    max-width: 700px;                        /* limits the width of the caption */
+    text-align: center;                      /* centers caption text */
+    color: var(--modal-caption-text-color);  /* sets the text color for the caption */
+    padding: 10px 0;                         /* adds padding above and below the caption */
+    height: 150px;                           /* sets a fixed height for the caption */
 }
 
-/* Add Animation - Zoom in the Modal */
 #modal-content,
 #modal-caption {
-    animation-name: zoom;
-    animation-duration: 0.6s;
+    animation-name: zoom;      /* applies zoom animation */
+    animation-duration: 0.6s;  /* duration of the animation */
 }
 
 @keyframes zoom {
     from {
-        transform: scale(0)
+        transform: scale(0);  /* starts with zero scale */
     }
-
     to {
-        transform: scale(1)
+        transform: scale(1);  /* scales up to full size */
     }
 }
 
-/* The Close Button */
 #modal-close {
-    position: fixed;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
+    position: fixed;                         /* fixes the close button to the viewport */
+    top: 15px;                               /* positions the close button 15px from the top */
+    right: 35px;                             /* positions the close button 35px from the right */
+    color: var(--modal-close-button-color);  /* sets the color of the close button */
+    font-size: 40px;                         /* sets the font size of the close button */
+    font-weight: bold;                       /* makes the close button bold */
+    transition: 0.3s;                        /* smooth transition for hover effect */
 }
 
 #modal-close:hover,
 #modal-close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+    color: var(--modal-close-button-hover-color);  /* changes the color of the close button on hover */
+    text-decoration: none;                         /* removes underline on hover */
+    cursor: pointer;                               /* changes cursor to pointer */
 }
 
-/* 100% Image Width on Smaller Screens */
+/* ------------------- mobile responsiveness ------------------- */
+
 @media only screen and (max-width: 700px) {
     #modal-content {
-        width: 100%;
+        width: 100%;  /* makes modal content span full width on small screens */
     }
 }

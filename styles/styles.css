@@ -1,160 +1,172 @@
 :root {
-    --primary-color: #00DC00;           /* primary color of my site */
-    --default-font: Inter, sans-serif;  /* primary font of my site */
-    --default-padding: 10px;              /* default padding to make everything cohesive */
-    --default-border-radius: 10px;
-    
-    --selected-page-link-color: #eee;  /* background color for the selected page link */
-    --hovered-page-link-color: #eee;   /* background color for a hovered page link */
+    --primary-color: #00DC00;                   /* primary color of the site */
+    --secondary-color: #00A800;                 /* secondary color of the site */
+    --primary-color-translucent: #00DC00B2;     /* translucent version of the primary color for first-page gradient */
 
-    --footer-color: #D9D9D9;
+    --default-font: "Montserrat", sans-serif;     /* default font for the site */
+    
+    --selected-nav-page-link-color: #ddd;       /* background color for selected page links */
+    --hovered-nav-page-link-color: #eee;        /* background color for hovered page links */
+
+    --footer-color: #D9D9D9;                    /* footer background color */
+
+    --default-padding: 10px;                      /* base padding for consistent spacing */
+    --default-border-radius: 10px;                /* default radius for rounded elements */
 }
 
+/* ------------------- defaults ------------------- */
+
 html, body {
-    height: 100%;
-    scroll-behavior: smooth;
+    height: 100%;             /* set full height for the page */
+    scroll-behavior: smooth;  /* enable smooth scrolling */
+}
+
+* {
+    font-family: var(--default-font);  /* apply default font to all elements */
 }
 
 body {
-    font-family: var(--default-font);  /* applies the default font (defined above) to the entire page */
-    box-sizing: border-box;            /* ensures padding and borders are included in the total element dimensions */
-    display: flex;
-    flex-direction: column;
+    display: flex;           /* use flex layout for the body */
+    flex-direction: column;  /* arrange children in a column */
 }
 
 main {
-    flex: 1;
+    flex: 1;  /* make the main element grow to fill available space */
 }
 
 body, body * {
-    margin: 0;                         /* removes the default margin so I can assign it later */
-    padding: 0;
+    margin: 0;   /* remove default margin from all elements */
+    padding: 0;  /* remove default padding from all elements */
 }
 
 a {
-    color: var(--primary-color);  /* sets the text color for all links to the primary color */
+    color: var(--primary-color);  /* set link text color to primary color */
 }
 
-/* header */
+/* ------------------- header & navigation ------------------- */
+
 header {
-    position: sticky;                       /* makes the header stick to the top of the page when scrolling */
-    top: 0;                                 /* position the header at the top of the page */
-    display: flex;                          /* flexbox for better layout management */
-    align-items: center;                    /* vertically centers items inside the header */
-    background-color: white;              /* sets the header background color to white (so you can't see through it while scrolling */
-    box-shadow: 0px 3px 9.4px 0px rgba(0, 0, 0, 0.25);      /* adds a subtle shadow to the header for depth effect (see figma) */
-    padding-right: var(--default-padding);  /* adds padding to the right of the header for nav buttons */
-    z-index: 999;                           /* ensures the header stays above other content */
+    position: sticky;                                     /* keep header at the top when scrolling */
+    top: 0;                                               /* position header at the very top */
+    display: flex;                                        /* use flexbox for layout */
+    align-items: center;                                  /* center header content vertically */
+    background-color: white;                            /* make header background white */
+    box-shadow: 0px 3px 9.4px 0px rgba(0, 0, 0, 0.25);  /* add shadow for depth */
+    padding-right: var(--default-padding);                /* add right padding for spacing */
+    z-index: 999;                                         /* ensure header stays on top */
 }
 
 header > h1 {
-    margin: 0;  /* removes the default margin for the h1 element in the header */
-    font-weight: normal;
+    margin: 0;            /* remove default margin for header title */
+    font-weight: normal;  /* set normal font weight for title */
 }
 
 header > div.spacer {
-    flex-grow: 1;  /* has the spacer take up remaining space in the header, pushing title and nav buttons to the sides */
+    flex-grow: 1;  /* make spacer expand to fill space */
 }
 
 header > img {
-    padding: var(--default-padding);  /* adds padding around the image in the header */
+    padding: var(--default-padding);  /* add padding around header image */
 }
 
 nav ul {
-    list-style-type: none;  /* removes default bullet points from list items in the nav */
-    margin: 0;              /* removes default margin from the unordered list */
+    list-style-type: none;  /* remove bullet points from navigation list */
+    margin: 0;              /* remove default margin from list */
 }
 
 nav li {
-    display: inline-block;  /* displays each list item inline, allowing horizontal layout */
+    display: inline-block;  /* display navigation items inline */
 }
 
 /* use this special syntax to not trigger hover effects for selected page */
 nav li:not(.selected-page) a:hover {
-    background-color: var(--hovered-page-link-color);  /* changes background color when hovering over non-selected page links */
+    background-color: var(--hovered-nav-page-link-color);  /* change background on hover for unselected links */
 }
 
 nav li.selected-page a {
-    background-color: var(--selected-page-link-color);  /* sets background color for the selected page link */
+    background-color: var(--selected-nav-page-link-color);  /* set background for selected link */
 }
 
 nav a {
-    display: inline-block;  /* for better layout */
-    padding: 10px;          /* adds padding around the links for better spacing */
-    text-decoration: none;  /* removes default underline from the button links */
-    color: black;         /* sets the default text color for the button links */
-    border-radius: 10px;    /* rounds the corners of the link */
+    display: inline-block;  /* use inline-block for layout consistency */
+    padding: 10px;          /* add padding for spacing */
+    text-decoration: none;  /* remove default link underline */
+    color: black;         /* set default text color */
+    border-radius: 10px;    /* round link corners */
 }
 
-/* footer */
+/* ------------------- footer ------------------- */
+
 footer {
-    display: flex;                          /* uses flexbox to align items better */
-    align-items: center;                    /* vertically centers items inside the footer */
-    background-color: var(--footer-color);               /* sets the background color of the footer */
-    box-shadow: 0px -3px 9.4px 0px rgba(0, 0, 0, 0.25);      /* adds a shadow to the footer for same depth effect as header */
-    padding-right: var(--default-padding);  /* adds padding to the right of the footer */
-    margin-top: 20px;                       /* adds a margin between the footer and the content above */
+    display: flex;                                         /* use flexbox for layout */
+    align-items: center;                                   /* align footer content vertically */
+    background-color: var(--footer-color);                 /* set footer background color */
+    box-shadow: 0px -3px 9.4px 0px rgba(0, 0, 0, 0.25);  /* add shadow for depth */
+    padding-right: var(--default-padding);                 /* add right padding to footer */
+    margin-top: 20px;                                      /* add spacing above footer */
 }
 
-div.vertical-line {
-    border-left: 1px solid #000;
-    height: 80%;
+.vertical-line {
+    border-left: 1px solid #000;  /* add vertical line with solid border */
+    height: 80%;                    /* set height of the line */
 }
 
 #contact-us {
-    display: flex;
-    padding: 0px 20px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
+    display: flex;            /* use flexbox for layout */
+    padding: 0px 20px;        /* add horizontal padding */
+    flex-direction: column;   /* arrange children in a column */
+    justify-content: center;  /* center content vertically */
+    align-items: flex-start;  /* align content to the left */
+    gap: 20px;                /* add spacing between elements */
 }
 
 #contact-us * {
-    margin: 0;
-    padding: 0;
+    margin: 0;   /* remove default margin */
+    padding: 0;  /* remove default padding */
 }
 
 #contact-us-email-phone {
-    display: flex;
-    align-items: flex-end;
-    gap: 20px;
+    display: flex;          /* use flexbox for layout */
+    align-items: flex-end;  /* align items to the bottom */
+    gap: 20px;              /* add spacing between elements */
 }
 
 #contact-us-social-media {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
+    display: flex;            /* use flexbox for layout */
+    align-items: flex-start;  /* align items to the top */
+    gap: 10px;                /* add spacing between elements */
 }
 
 #contact-us-email-phone > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 10px;
+    display: flex;            /* use flexbox for layout */
+    flex-direction: column;   /* arrange children in a column */
+    justify-content: center;  /* center content vertically */
+    align-items: flex-start;  /* align content to the left */
+    gap: 10px;                /* add spacing between elements */
 }
 
 #contact-us-email-phone p {
-    white-space: nowrap;
+    white-space: nowrap;  /* prevent text wrapping */
 }
 
+/* ------------------- heading section defaults ------------------- */
+
 .heading-section {
-    height: 200px;
-    background-color: var(--primary-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 40px;
-    /* margin-bottom: var(--default-padding); */
+    height: 200px;                           /* set height for the section */
+    background-color: var(--primary-color);  /* set background color */
+    display: flex;                           /* use flexbox for layout */
+    flex-direction: column;                  /* arrange children in a column */
+    align-items: center;                     /* center content horizontally */
+    justify-content: center;                 /* center content vertically */
+    text-align: center;                      /* center align text */
+    padding: 0 60px;                         /* add horizontal padding */
 }
 
 .heading-section h2 {
-    font-size: 2rem;
+    font-size: 2rem;  /* set font size for heading */
 }
 
 .heading-section p {
-    font-size: 1.2rem;
+    font-size: 1.2rem;  /* set font size for paragraph */
+    max-width: 1000px;  /* limit width of text */
 }

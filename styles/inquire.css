@@ -1,13 +1,132 @@
-/* textbox styling */
-input[type="text"], input[type="email"], textarea {
-    border-radius: 10px;  /* default radius of rest of site */
+:root {
+    --input-border-color: #ccc;        /* border color for input fields */
+    --radio-background-color: #fff;    /* background color for radio buttons */
+    --submit-button-text-color: #fff;  /* text color for the submit button */
 }
 
-/* submit button */
+/* ------------------- general layout ------------------- */
+
+form {
+    display: grid;               /* uses grid layout for the form */
+    grid-template-columns: 1fr;  /* single column layout for form items */
+    gap: 20px;                   /* spacing between form elements */
+    margin: 20px;                /* margin around the form */
+}
+
+form > div {
+    display: flex;           /* uses flex layout for form divs */
+    flex-direction: column;  /* arranges items in a column */
+    gap: 5px;                /* spacing between child elements */
+}
+
+/* make the three text areas in the center side-by-side */
+form > div.textarea-container {
+    display: grid;                       /* uses grid layout for the text areas */
+    grid-template-columns: 1fr 1fr 1fr;  /* three equal columns */
+    gap: 20px;                           /* spacing between text areas */
+}
+
+/* ------------------- inputs ------------------- */
+
+form textarea, form input[type="text"], form input[type="email"] {
+    width: 100%;                                  /* full width for all inputs */
+    padding: var(--default-padding);              /* padding inside the input fields */
+    border: 1px solid var(--input-border-color);  /* border color for inputs */
+    border-radius: var(--default-border-radius);  /* rounded corners for inputs */
+    box-sizing: border-box;                       /* includes padding and border in width/height */
+    transition: all 0.2s ease-in-out;             /* smooth transition for state changes */
+}
+
+textarea {
+    resize: none;   /* disables resizing of the textarea */
+    height: 100px;  /* fixed height for the textarea */
+}
+
+form textarea:focus, form input[type="text"]:focus, form input[type="email"]:focus {
+    border-color: var(--primary-color);        /* changes border color on focus */
+    outline: none;                             /* removes default outline */
+    box-shadow: 0 0 5px var(--primary-color);  /* glow effect around the input */
+}
+
+/* ------------------- radio buttons ------------------- */
+
+form > div.radio-group {
+    display: flex;           /* uses flex layout for the radio group */
+    flex-direction: column;  /* arranges radio buttons in a column */
+    gap: 10px;               /* spacing between radio buttons */
+}
+
+input[type="radio"] {
+    appearance: none;                        /* removes default styling for radio buttons */
+    width: 16px;                             /* sets the width of the radio button */
+    height: 16px;                            /* sets the height of the radio button */
+    border: 2px solid var(--primary-color);  /* border color for unchecked state */
+    border-radius: 50%;                      /* makes the radio button circular */
+    outline: none;                           /* removes default outline */
+    cursor: pointer;                         /* changes cursor to pointer */
+    position: relative;                      /* positions the custom indicator */
+}
+
+input[type="radio"]:checked {
+    background-color: var(--primary-color);  /* fills the button when checked */
+    border-color: var(--primary-color);      /* matches border with background */
+}
+
+input[type="radio"]:checked::before {
+    content: '';                                      /* creates the inner circle */
+    display: block;                                   /* ensures it is visible */
+    width: 8px;                                       /* sets the width of the inner circle */
+    height: 8px;                                      /* sets the height of the inner circle */
+    background-color: var(--radio-background-color);  /* inner circle color */
+    border-radius: 50%;                               /* makes the inner circle circular */
+    position: absolute;                               /* positions it inside the outer circle */
+    top: 50%;                                         /* centers it vertically */
+    left: 50%;                                        /* centers it horizontally */
+    transform: translate(-50%, -50%);                 /* perfect centering */
+}
+
+.radio-group label {
+    font-size: 1rem;        /* sets the font size for radio labels */
+    display: inline-block;  /* ensures labels are inline with radios */
+    cursor: pointer;        /* makes the label clickable */
+    margin-left: 10px;      /* spacing between radio and label text */
+}
+
+.radio-group div {
+    display: flex;        /* uses flex layout for radio button and label */
+    align-items: center;  /* vertically aligns label and button */
+}
+
+/* ------------------- submit button ------------------- */
+
 .submit-button {
-    background-color: #ccc;  /* sets background color of submit button for better visuals */
-    padding: 5px 10px;         /* sets padding to make button appear wider */
-    border-radius: 10px;       /* default rounded border */
-    margin-top: 10px;          /* space between button and above form content */
-    cursor: pointer;
+    background-color: var(--primary-color);       /* background color for the button */
+    color: var(--submit-button-text-color);       /* text color for the button */
+    font-weight: bold;                            /* makes the text bold */
+    padding: 10px 20px;                           /* spacing inside the button */
+    border: none;                                 /* removes the default border */
+    border-radius: var(--default-border-radius);  /* rounded corners for the button */
+    cursor: pointer;                              /* changes cursor to pointer */
+    text-align: center;                           /* centers the text inside the button */
+}
+
+.submit-button:hover {
+    background-color: var(--secondary-color);  /* changes background color on hover */
+}
+
+/* ------------------- mobile responsiveness ------------------- */
+
+@media only screen and (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr;  /* switches form to single column layout */
+    }
+
+    form > div.textarea-container {
+        grid-template-columns: 1fr;  /* makes text areas stack vertically */
+        gap: 10px;                   /* reduces spacing between text areas */
+    }
+
+    .submit-button {
+        width: 100%;  /* makes the button full width */
+    }
 }

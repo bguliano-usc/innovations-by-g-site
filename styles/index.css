@@ -1,131 +1,128 @@
-/*
-
-classes should be denoted
-    element.class
-
-ids should be denoted
-    #id
-
-*/
-
 :root {
-    --main-buttons-color: #444;  /* sets the main color for buttons */
-    --main-buttons-hover-color: #222;
-    --card-background-color: #F5F5F5;
-    --primary-color-translucent: #00DC00B2;
-    --header-internal-pad: 60px;
+    --header-internal-pad: 60px;         /* padding between edges of header image and internal text/buttons */
+    --button-background-color: #222;   /* button background color of header */
+    --button-text-color: #fff;         /* button text color of header */
+    --button-hover-color: #444;        /* button hover color */
+    --card-background-color: #F5F5F5;  /* background color for card elements */
+    --card-shadow-color: #00000040;
 }
 
-/* heading section */
+/* ------------------- override heading section from styles.css ------------------- */
+
 section.heading-section {
-    height: 500px;                                                                  /* sets the height of the first section */
-    position: relative;                                                             /* sets the position relative for absolute positioning below */
-    background-image: linear-gradient(90deg, var(--primary-color-translucent) 0%, var(--primary-color) 100%), url('../images/bg-code.png');
+    height: 500px;                 /* sets the height of the first section */
+    position: relative;            /* sets the position relative for absolute positioning below */
+    background-image: linear-gradient(90deg, var(--primary-color-translucent) 0%, var(--primary-color) 100%), url('../images/bg-code.png');  /* gradient from translucent to solid overlaid on an image*/
     background-size: auto, cover;  /* show more of the background image */
 }
 
-/* heading section - title */
 section.heading-section h2 {
-    position: absolute;  /* positions the using the below constraints */
-    top: var(--header-internal-pad);           /* places the heading 30px from the top */
-    left: var(--header-internal-pad);          /* places the heading 30px from the left */
-    font-size: 3.5rem;     /* sets a large font size for the heading */
-    padding: 0;
+    position: absolute;                /* positions the heading using the below constraints */
+    top: var(--header-internal-pad);   /* places the heading at a specific distance from the top */
+    left: var(--header-internal-pad);  /* places the heading at a specific distance from the left */
+    font-size: 3.5rem;                 /* sets a large font size for the heading */
+    padding: 0;                        /* removes padding from the heading */
 }
 
-/* heading section - first button */
 section.heading-section a:first-child {
     margin-right: 10px;  /* adds space to the right of the first button */
 }
 
-/* heading section - div containing button */
 #main-buttons-container {
-    position: absolute;  /* positions the using the below constraints */
-    bottom: var(--header-internal-pad);        /* places the container 45px from the bottom */
-    right: var(--header-internal-pad);         /* places the container 30px from the right */
+    position: absolute;                 /* positions the container using the constraints below */
+    bottom: var(--header-internal-pad); /* places the container at a specific distance from the bottom */
+    right: var(--header-internal-pad);  /* places the container at a specific distance from the right */
 }
 
-/* heading section - actual anchor buttons */
 #main-buttons-container > a {
-    background-color: var(--main-buttons-color);  /* applies the main button color */
-    padding: 15px;                                /* adds padding inside the buttons */
-    border-radius: 10px;                          /* rounds the corners of the buttons */
-    text-decoration: none;                        /* removes the underline from links */
-    color: white;                               /* sets the button text color to white */
-    font-weight: normal;                          /* makes the button text bold */
-    display: inline-block;
+    background-color: var(--button-background-color); /* applies the main button color */
+    padding: 15px;                                    /* adds padding inside the buttons */
+    border-radius: 10px;                              /* rounds the corners of the buttons */
+    text-decoration: none;                            /* removes the underline from links */
+    color: var(--button-text-color);                  /* sets the button text color to white */
+    font-weight: normal;                              /* makes the button text normal weight */
+    display: inline-block;                            /* ensures buttons are inline */
 }
 
-/* heading section - anchor buttons on hover */
 #main-buttons-container > a:hover {
-    background-color: var(--main-buttons-hover-color);
+    background-color: var(--button-hover-color);  /* changes the button color on hover */
 }
 
-div.section-div-content > p {
-    margin: 0;
+.section-div-content > p {
+    margin: 0;  /* removes margin from the paragraph */
 }
 
-/* cards */
+/* ------------------- cards ------------------- */
 
 .card {
-    background-color: var(--card-background-color);                /* sets a light grey background for the cards */
-    margin: 10px;                            /* adds a margin around each card */
-    border-radius: 10px;                     /* rounds the corners of each card */
-    text-align: center;                      /* centers text inside the card */
-    padding: 5px;                            /* adds padding inside the card */
-    border: 2px solid var(--primary-color);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 1/1;
-    flex: 1;
-    max-width: 300px;
+    background-color: var(--card-background-color);  /* sets a light grey background for the cards */
+    margin: 10px;                                    /* adds a margin around each card */
+    border-radius: 10px;                             /* rounds the corners of each card */
+    text-align: center;                              /* centers text inside the card */
+    padding: 5px;                                    /* adds padding inside the card */
+    border: 2px solid var(--primary-color);          /* sets the card border color */
+    display: flex;                                   /* uses flex layout for card elements */
+    flex-direction: column;                          /* arranges card elements in a column */
+    justify-content: center;                         /* centers content vertically */
+    align-items: center;                             /* centers content horizontally */
+    aspect-ratio: 1/1;                               /* ensures the card is square */
+    flex: 1;                                         /* allows cards to grow evenly */
+    max-width: 300px;                                /* sets the maximum width of the card */
+    transition: all 0.3s ease-in-out;                /* adds a smooth transition effect */
 }
 
-/* background styling for bordered divs */
-div.bordered {
-    padding: 50px;
-    background-image: url('../images/corner-tl.png'), url('../images/corner-br.png');
-    background-position: top left, bottom right;
-    background-repeat: no-repeat, no-repeat;
-    background-size: 50px 50px, 50px, 50px;
-}
-
-/* about us */
-#about-us img {
-    float: left;
-    width: 100px;
-    height: 100px;
-    padding: var(--default-padding);
-}
-
-#why-choose-us img {
-    width: 100px;
-    height: 100px;
-}
-
-#why-choose-us h3.section-div-title {
-    text-align: center;
+.card:hover {
+    box-shadow: 0px 4px 10px 3px var(--card-shadow-color);  /* adds a shadow on hover */
+    translate: 0 -2px;                                      /* slightly moves the card up on hover to give depth */
 }
 
 div.card > * {
-    margin: 5px;
+    margin: 5px;  /* adds margin to all children of the card */
 }
 
 div.card > h4 {
-    font-weight: normal;
-    font-size: 1.5rem;
+    font-weight: normal;  /* sets normal weight for the card heading */
+    font-size: 1.5rem;    /* sets the font size for the card heading */
 }
 
-/* space out section divs */
+/* ------------------- bordered divs ------------------- */
+
+div.bordered {
+    padding: 50px;                                                                     /* adds padding inside the bordered div */
+    background-image: url('../images/corner-tl.png'), url('../images/corner-br.png');  /* apply both border images as background images */
+    background-position: top left, bottom right;                                       /* positions the corner images */
+    background-repeat: no-repeat, no-repeat;                                           /* prevents repeating of the corner images */
+    background-size: 50px 50px, 50px, 50px;                                            /* sets the size of the corner images */
+}
+
+/* ------------------- about us ------------------- */
+
+#about-us img {
+    float: left;                      /* floats the image to the left */
+    width: 100px;                     /* sets the width of the image */
+    height: 100px;                    /* sets the height of the image */
+    padding: var(--default-padding);  /* adds padding around the image */
+}
+
+/* ------------------- why choose us ------------------- */
+
+#why-choose-us img {
+    width: 100px;   /* sets the width of the image */
+    height: 100px;  /* sets the height of the image */
+}
+
+#why-choose-us h3.section-div-title {
+    text-align: center;  /* centers the text inside the section */
+}
+
+/* ------------------- section divs ------------------- */
+
 main > section > div {
-    margin: 70px 50px;
+    margin: 70px 50px;  /* adds margin around the section div */
 }
 
 .section-div-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex;            /* uses flex layout for the section div content */
+    align-items: center;      /* centers content vertically */
+    justify-content: center;  /* centers content horizontally */
 }

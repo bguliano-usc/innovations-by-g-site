@@ -1,53 +1,59 @@
-/* card dropdown */
-.card-dropdown {
-    background-color: #f5f5f5;  /* sets background color of cards per figma */
-    max-height: 0;
-    transition: all 0.3s linear;
-    overflow: hidden;
-    border-radius: 0 0 var(--default-border-radius) var(--default-border-radius);
-    padding: 0 40px;
-    width: 100%;
-}
-
-.card.open .card-dropdown {
-    max-height: 500px;
-    transition: all 0.3s linear;
-    padding: var(--default-padding) 40px;
-}
+/* ------------------- cards ------------------- */
 
 .card {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    flex-shrink: 0;
-    flex-wrap: wrap;
-    border-radius: var(--default-border-radius);
-    border: 1px solid var(--footer-color);
-    margin: 20px;
-    cursor: pointer;
+    display: flex;                                /* uses flexbox layout for the card */
+    align-items: center;                          /* centers items vertically */
+    align-content: center;                        /* centers content inside the card */
+    flex-shrink: 0;                               /* prevents the card from shrinking */
+    flex-wrap: wrap;                              /* allows wrapping of content inside the card */
+    border-radius: var(--default-border-radius);  /* rounds the corners of the card */
+    border: 1px solid var(--footer-color);        /* sets the card border color */
+    margin: 20px;                                 /* adds margin around the card */
+    cursor: pointer;                              /* changes cursor to pointer on hover */
 }
 
 .card-content {
-    display: flex;
-    min-width: 160px;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1 0 0;
-    padding: var(--default-padding) 0;
+    display: flex;                      /* uses flexbox for card content layout */
+    min-width: 160px;                   /* sets the minimum width for the card content */
+    flex-direction: column;             /* arranges content in a column */
+    align-items: flex-start;            /* aligns content to the left */
+    flex: 1 0 0;                        /* sets flex properties for the content */
+    padding: var(--default-padding) 0;  /* adds vertical padding */
+}
+
+.card-dropdown {
+    background-color: var(--card-background-color);                                /* sets the dropdown background color */
+    max-height: 0;                                                                 /* hides the dropdown initially */
+    transition: all 0.3s linear;                                                   /* adds a smooth transition effect */
+    overflow: hidden;                                                              /* hides content overflowing the dropdown */
+    border-radius: 0 0 var(--default-border-radius) var(--default-border-radius);  /* rounds the bottom corners */
+    padding: 0 40px;                                                               /* adds horizontal padding */
+    width: 100%;                                                                   /* makes the dropdown full width */
+}
+
+.card.open .card-dropdown {
+    max-height: 500px;                     /* expands the dropdown when the card is open */
+    transition: all 0.3s linear;           /* adds a smooth transition effect */
+    padding: var(--default-padding) 40px;  /* adds padding when the dropdown is open */
 }
 
 .dropdown-arrow {
-    width: 48px;
-    height: 48px;
-    transition: all 0.3s linear;
+    width: 48px;                  /* sets the width of the dropdown arrow */
+    height: 48px;                 /* sets the height of the dropdown arrow */
+    transition: all 0.3s linear;  /* adds a smooth transition effect for the arrow */
 }
 
-/* only rotate the arrow if the card is open */
 .card.open .dropdown-arrow {
-    rotate: 90deg;
+    rotate: 90deg;  /* rotates the arrow only when the card is open */
 }
 
 .card img {
-    width: 60px;
-    padding: 10px;
+    width: 60px;    /* sets the width of images inside the card */
+    padding: 10px;  /* adds padding around the images */
+}
+
+/* ------------------- additional services paragraph ------------------- */
+
+#additional-services {
+    text-align: center;  /* centers the text inside the additional services section */
 }

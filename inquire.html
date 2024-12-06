@@ -10,13 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/inquire.css">
-    <!-- Download Inter font -->
+    <!-- Download Montserrat font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Inquire</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -56,57 +55,61 @@
         </section>
 
         <section>
-            <form action="#" method="post">
+            <form action="#" method="post" onsubmit="alert('Thank you for your response.');">
                 <div>
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
-
+        
                 <div>
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-
-                <div>
+        
+                <div class="radio-group">
                     <p>Type of service requesting:</p>
-                    <input type="radio" id="technology-consulting" name="service" value="technology-consulting"
-                        required>
-                    <label for="technology-consulting">Technology Consulting</label>
-
-                    <input type="radio" id="systems-integration" name="service" value="systems-integration">
-                    <label for="systems-integration">Systems Integration</label>
-
-                    <input type="radio" id="custom-solutions" name="service" value="custom-solutions">
-                    <label for="custom-solutions">Custom Solutions</label>
+                    <div>
+                        <input type="radio" id="technology-consulting" name="service" value="technology-consulting" required>
+                        <label for="technology-consulting">Technology Consulting</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="systems-integration" name="service" value="systems-integration">
+                        <label for="systems-integration">Systems Integration</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="custom-solutions" name="service" value="custom-solutions">
+                        <label for="custom-solutions">Custom Solutions</label>
+                    </div>
                 </div>
-
+        
                 <div class="textarea-container">
                     <div>
                         <label for="goals">Goals in mind:</label>
-                        <textarea id="goals" name="goals" rows="4" cols="30"></textarea>
+                        <textarea id="goals" name="goals" required></textarea>
                     </div>
-
+        
                     <div>
                         <label for="current-process">What process are you currently using?</label>
-                        <textarea id="current-process" name="current-process" rows="4" cols="30"></textarea>
+                        <textarea id="current-process" name="current-process" required></textarea>
                     </div>
-
+        
                     <div>
                         <label for="initial-ideas">Describe any initial ideas:</label>
-                        <textarea id="initial-ideas" name="initial-ideas" rows="4" cols="30"></textarea>
+                        <textarea id="initial-ideas" name="initial-ideas" required></textarea>
                     </div>
                 </div>
-
+        
                 <div>
                     <label for="additional-notes">Additional notes:</label>
-                    <textarea id="additional-notes" name="additional-notes" rows="4" cols="50"></textarea>
+                    <textarea id="additional-notes" name="additional-notes"></textarea>
                 </div>
-
+        
                 <div>
                     <input type="submit" value="Submit" class="submit-button">
                 </div>
             </form>
         </section>
+        
 
     </main>
 
@@ -128,9 +131,9 @@
                 </div>
             </div>
             <div id="contact-us-social-media">
-                <a href="#"><img src="images/footer-icons/facebook.png" alt="Facebook icon" width="24" height="24"></a>
-                <a href="#"><img src="images/footer-icons/instagram.png" alt="Instagram icon" width="24" height="24"></a>
-                <a href="#"><img src="images/footer-icons/linkedin.png" alt="LinkedIn icon" width="24" height="24"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="images/footer-icons/facebook.png" alt="Facebook icon" width="24" height="24"></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="images/footer-icons/instagram.png" alt="Instagram icon" width="24" height="24"></a>
+                <a href="https://www.linkedin.com/in/braden-guliano-7b682b214/" target="_blank"><img src="images/footer-icons/linkedin.png" alt="LinkedIn icon" width="24" height="24"></a>
             </div>
         </div>
     </footer>

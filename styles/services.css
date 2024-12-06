@@ -1,3 +1,7 @@
+:root {
+    --card-background-color: #eee;
+}
+
 /* ------------------- cards ------------------- */
 
 .card {

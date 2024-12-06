@@ -2,7 +2,7 @@
     --primary-color: #00DC00;                   /* primary color of the site */
     --secondary-color: #00A800;                 /* secondary color of the site */
     --primary-color-translucent: #00DC00B2;     /* translucent version of the primary color for first-page gradient */
-    --primary-color-link: #005f00;              /* primary color of the site but darker for links */
+    --primary-color-dark: #005f00;              /* primary color of the site but darker for links */
 
     --default-font: "Montserrat", sans-serif;     /* default font for the site */
     
@@ -41,7 +41,7 @@ body, body * {
 }
 
 a {
-    color: var(--primary-color-link);  /* set link text color to primary color */
+    color: var(--primary-color-dark);  /* set link text color to primary color */
 }
 
 /* ------------------- header & navigation ------------------- */

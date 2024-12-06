@@ -100,7 +100,7 @@ input[type="radio"]:checked::before {
 /* ------------------- submit button ------------------- */
 
 .submit-button {
-    background-color: var(--primary-color);       /* background color for the button */
+    background-color: var(--secondary-color);     /* background color for the button */
     color: var(--submit-button-text-color);       /* text color for the button */
     font-weight: bold;                            /* makes the text bold */
     padding: 10px 20px;                           /* spacing inside the button */
@@ -111,7 +111,7 @@ input[type="radio"]:checked::before {
 }
 
 .submit-button:hover {
-    background-color: var(--secondary-color);  /* changes background color on hover */
+    background-color: var(--primary-color-dark);  /* changes background color on hover */
 }
 
 /* ------------------- mobile responsiveness ------------------- */
